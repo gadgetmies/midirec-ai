@@ -1,0 +1,160 @@
+:root {
+  color-scheme: dark light;
+  --bg: #0f1218;
+  --panel: #171c26;
+  --border: #2a3140;
+  --text: #e8ecf4;
+  --muted: #8b95a8;
+  --accent: #5b8cff;
+  --danger: #ff5b6b;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  line-height: 1.4;
+}
+
+body.high-contrast {
+  --bg: #000;
+  --panel: #000;
+  --border: #fff;
+  --text: #fff;
+  --muted: #ccc;
+  --accent: #ff0;
+  --danger: #f00;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.35rem 0.6rem;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button.primary {
+  background: var(--accent);
+  border-color: transparent;
+  color: #0a0e14;
+}
+
+input,
+select {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.45rem;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 0;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: 0;
+  gap: 0.5rem;
+  padding: 0.5rem;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+  overflow: auto;
+  min-height: 0;
+}
+
+.timeline-wrap {
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.error-banner {
+  background: #3a1518;
+  border-bottom: 1px solid var(--danger);
+  padding: 0.5rem 0.75rem;
+  color: #ffd6da;
+}
+
+.toast-host {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 50;
+}
+
+.toast {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  max-width: 320px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+kbd {
+  font-size: 0.75rem;
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: var(--bg);
+}
